@@ -11,18 +11,20 @@
     <h1 class="text-uppercase text-center">homepage</h1>
     <div class="container">
         <h2>Film</h2>
-    <ul class="d-flex flex-wrap">
-        @foreach ($movies as $movie)
-            <li class="m-5">{{ $movie->title }}
-            <ul>
-                <li> {{$movie->original_title}} </li>
-                <li> {{$movie->nationality}} </li>
-                <li> {{$movie->date}} </li>
-                <li> {{$movie->vote}} </li>
-            </ul></li>
-
-        @endforeach
-    </ul>
-    </div>
+        <div class="row g-5">
+            @foreach ($movies as $movie)
+            <div class="card col-4">
+                <div class="card-header">
+                    <h3>{{$movie->title}}</h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{$movie->original_title}}</li>
+                  <li class="list-group-item">{{$movie->nationality}}</li>
+                  <li class="list-group-item">{{$movie->date}}</li>
+                  <li class="list-group-item">{{$movie->vote}}</li>
+                </ul>
+              </div>
+            @endforeach
+        </div>
 </body>
 </html>
